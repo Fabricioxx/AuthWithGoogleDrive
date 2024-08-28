@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "999211810283",
+    "project_id": "authwithdrive",
+    "storage_bucket": "authwithdrive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999211810283:android:cfe804e8cdc2b311f02dae",
+        "android_client_info": {
+          "package_name": "com.galactapp.authwithgoogledrive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999211810283-eaf7fm5b8482vqb3qdemb6asgq0h703t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.galactapp.authwithgoogledrive",
+            "certificate_hash": "39a01a38106a65f9e5b66c6d8e53fb3d6a8dca4f"
+          }
+        },
+        {
+          "client_id": "999211810283-mc3a0548a4ademq7ea85dujpuggeiutr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9Los9IcLHiXUJ3guAFhLDuV-Z4xtkpDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999211810283-mc3a0548a4ademq7ea85dujpuggeiutr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

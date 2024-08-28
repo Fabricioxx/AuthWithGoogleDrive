@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AuthWithGoogleDrive</string>
+    <string name="your_web_client_id">999211810283-mc3a0548a4ademq7ea85dujpuggeiutr.apps.googleusercontent.com</string>
 </resources>
+
