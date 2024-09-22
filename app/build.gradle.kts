@@ -78,4 +78,15 @@ dependencies {
     implementation(libs.google.oauth.client.jetty)
     implementation(libs.google.api.services.drive)
 
+    //google drive api
+   // implementation(libs.google.api.client) // Biblioteca base para fazer chamadas de API do Google.
+    implementation(libs.google.api.client.android) // Integração específica para Android, facilitando o uso da API em dispositivos Android.
+   // implementation(libs.google.api.services.drive) // Biblioteca específica para interagir com o Google Drive API.
+    implementation(libs.google.auth.library.oauth2.http) // Biblioteca para autenticação OAuth2, necessária para acessar os serviços do Google com credenciais seguras.
+    //implementation(libs.google.oauth.client.jetty) // Cliente OAuth2 com suporte ao servidor Jetty para facilitar o processo de autorização.
+
+    // coil - imagem
+    implementation(libs.coil.compose)
+
+
 }
