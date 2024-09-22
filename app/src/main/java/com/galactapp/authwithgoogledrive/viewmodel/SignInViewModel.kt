@@ -4,16 +4,14 @@ package com.galactapp.authwithgoogledrive.viewmodel
 
 
 import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.galactapp.authwithgoogledrive.model.User
 import com.galactapp.authwithgoogledrive.service.DriveRepository
+import com.galactapp.authwithgoogledrive.service.getGoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.Scopes
-import com.google.android.gms.common.api.Scope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -69,37 +67,28 @@ class SignInViewModel(
                     googleSignInClient.signOut().await()
                 }
                 _user.value = null
-                notifyLogoutComplete()
+                notifyLogoutComplete(context = context)
             } catch (e: Exception) {
-                handleLogoutFailure(e)
+                handleLogoutFailure(context = context, exception = e)
             }
         }
     }
 
 
-    private fun notifyLogoutComplete() {
-        // Implementar notificações ou callbacks aqui se necessário
-        println("Logout completo de todos os serviços")
+    private fun notifyLogoutComplete(context: Context) {
+        Toast.makeText(context, "Logout completo de todos os serviços", Toast.LENGTH_LONG).show()
     }
 
-    private fun handleRevokeFailure(exception: Exception?) {
-        println("Falha ao revogar acesso: ${exception?.localizedMessage}")
+    private fun handleRevokeFailure(context: Context, exception: Exception?) {
+        Toast.makeText(context, "Falha ao revogar acesso: ${exception?.localizedMessage}", Toast.LENGTH_LONG).show()
         // Implementar ações adicionais conforme necessário, como logs ou avisos ao usuário
     }
 
-    private fun handleLogoutFailure(exception: Exception?) {
-        println("Falha ao deslogar: ${exception?.localizedMessage}")
+    private fun handleLogoutFailure(context: Context, exception: Exception?) {
+        Toast.makeText(context, "Falha ao deslogar: ${exception?.localizedMessage}", Toast.LENGTH_LONG).show()
         // Implementar ações adicionais conforme necessário
     }
 
-    private fun getGoogleSignInClient(context: Context): GoogleSignInClient {
-        val signInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestEmail()
-            .requestScopes(Scope(Scopes.DRIVE_FILE)) // Certifique-se de incluir os escopos necessários
-            .build()
-
-        return GoogleSignIn.getClient(context, signInOptions)
-    }
 }
 
 
